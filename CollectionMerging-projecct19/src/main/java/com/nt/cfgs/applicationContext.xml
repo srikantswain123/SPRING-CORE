@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-merge="true" xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<bean id="bc" class="com.nt.beans.EnggCourse" abstract="true">
+<property name="course">
+<set>
+<value>c++</value>
+<value>M1</value>
+<value>Ds</value>
+<value>Drawing</value>
+</set>
+
+</property>
+</bean>
+<bean id="firstYear" parent="bc" >
+<property name="course">
+<set merge="false">
+<value>Networking</value>
+<value>Java</value>
+<value>.net</value>
+
+</set>
+
+</property>
+
+</bean>
+
+
+
+
+</beans>

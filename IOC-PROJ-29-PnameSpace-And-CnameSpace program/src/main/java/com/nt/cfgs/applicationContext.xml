@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean id="dob" class="java.util.Date" p:year="100" p:month="10" p:date="12"/>
+	<bean id="doj" class="java.util.Date" p:year="300" p:month="05" p:date="13"/>
+	<bean id="emp" class="com.nt.beans.Employe" c:Empid="101" c:Empname="Jagdip" c:jdate-ref="doj"/>
+	<bean id="stu" class="com.nt.beans.Student" p:sno="200" p:sname="Srikant" p:dob-ref="dob"/>
+	
+
+
+</beans>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="engg" class="com.nt.beans.Engine"/>
+<bean id="vehicle" class="com.nt.beans.Vehicle">
+<!-- <constructor-arg value="engg"/> --><!-- use full but not recomended -->
+<constructor-arg>
+<idref bean="engg"/><!-- This is recomended -->
+</constructor-arg>
+
+
+</bean>
+
+
+
+</beans>

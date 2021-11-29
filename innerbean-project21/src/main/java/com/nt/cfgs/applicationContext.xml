@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  <bean id="oraDrds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+  <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
+  <property name="username" value="system"/>
+  <property name="password" value="Srikant1234"/>
+  
+  </bean>
+  <bean id="MysqlDrds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+  <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
+  <property name="url" value="jdbc:mysql:///ntsp713"/>
+  <property name="username" value="root"/>
+  <property name="password" value="root"/>
+  
+  </bean>
+  <bean id="mysqlDao" class="com.nt.dao.MysqlPatientDAOImpl">
+  <constructor-arg ref="MysqlDrds"/>
+  </bean>
+  
+  
+  
+  <bean id="oraDao" class="com.nt.dao.OraPatientDAOImpl">
+  <constructor-arg ref="oraDrds"/>
+  </bean>
+  
+ <!--  <bean id="patientService" class="com.nt.service.CorornaPatientMGmtServiceImpl">
+  <constructor-arg ref="oraDao"/>
+<constructor-arg ref="mysqlDao"/>
+  </bean>
+   -->
+  <bean id="mco" class="com.nt.controler.MainControler">
+  <constructor-arg>
+  <bean class="com.nt.service.CorornaPatientMGmtServiceImpl">
+  <constructor-arg ref="oraDao"/>
+  </bean>
+  </constructor-arg>
+  </bean>
+
+</beans>

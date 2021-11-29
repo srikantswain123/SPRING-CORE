@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+	
+   <bean id="marks" class="com.nt.beans.ArrayAndCollectionInjectionTest">
+     <property name="marks">
+     <array>
+     <value>10</value>
+     <value>20</value>
+     <value>30</value>
+     <value>40</value>
+     
+     </array>
+     
+     
+     </property>
+    
+   </bean>
+   <bean id="stu" class="com.nt.beans.CollegeCollection" >
+    <property name="student">
+      <list>
+      <value>raja</value>
+      <value>rani</value>
+      <value>amit</value>
+      <value>dhruva</value>
+      <value>jubain</value>
+               
+      </list>
+    
+    
+    </property> 
+    <property name="sysdate">
+    <list>
+      <ref bean="date"/>
+    </list>
+    
+    
+    </property> 
+   
+   </bean>
+   <bean id="date" class="java.util.Date">
+     <property name="year" value="90"/>
+     <property name="month" value="11"/>
+     <property name="date" value="22"/>
+ </bean>
+   
+   
+   
+
+
+</beans>

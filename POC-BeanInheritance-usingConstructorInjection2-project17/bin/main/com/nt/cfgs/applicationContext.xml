@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="base" class="com.nt.beans.Bike" abstract="true">
+<constructor-arg name="bikeName" value="Honda"/>
+<constructor-arg name="model" value="shine"/>
+</bean>
+
+
+<bean id="rajiv" class="com.nt.beans.Bike" parent="base">
+<constructor-arg name="bikeNo" value="848865"/>
+<constructor-arg name="color" value="red"/>
+<constructor-arg name="engno" value="6545dsf55"/>
+<constructor-arg name="owner" value="rajiv"/>
+<constructor-arg name="regno" value="cfg456"/>
+</bean>
+<bean id="thakre" class="com.nt.beans.Bike" parent="base">
+<constructor-arg name="bikeNo" value="848865"/>
+<constructor-arg name="color" value="yellow"/>
+<constructor-arg name="engno" value="6545dsf55"/>
+<constructor-arg name="owner" value="rajiv"/>
+<constructor-arg name="regno" value="cfg456"/>
+</bean>
+
+
+
+
+</beans>

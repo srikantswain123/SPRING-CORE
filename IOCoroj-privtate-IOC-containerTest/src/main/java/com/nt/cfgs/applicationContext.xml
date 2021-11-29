@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<bean id="ex" class="com.nt.beans.Example">
+<constructor-arg value="30"/>
+
+</bean>
+<bean id="sa" class="com.nt.beans.Example.Sample">
+<constructor-arg value="60"/>
+</bean>
+
+</beans>

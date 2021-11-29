@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	<!-- dependent class Injection -->
+	<!-- Here dependent class or variable 'type' must match with target class property 'type' and take special care about ambiguity err
+	if ambiguty error is there plz take one dependent with primary="true" attribute -->
+	<!-- <bean id="dtdc" class="com.nt.beans.DTDC" />
+	<bean id="bdt" class="com.nt.beans.BlueDart" primary="true" />
+	
+	Target class
+	<bean id="fkt" class="com.nt.beans.Flipkart" autowire="byType"/> -->
+	
+	
+	
+	
+	
+	<!--  byName 
+	dependent class Injection
+	here the id must match with target class property name
+	<bean id="dtdc" class="com.nt.beans.DTDC" />insert id with name courier
+	<bean id="bdt" class="com.nt.beans.BlueDart" />
+	
+	Target class
+	<bean id="fkt" class="com.nt.beans.Flipkart" autowire="byName"/>
+	
+	
+	 -->
+	 <!-- By using constructor type -->
+	 <bean id="dtdc" class="com.nt.beans.DTDC" />
+	 <bean id="courier" class="com.nt.beans.BlueDart" />
+	
+	<!-- Target class -->
+	<bean id="fkt" class="com.nt.beans.Flipkart" autowire="byName" >
+	<constructor-arg ref="dtdc"/>
+	</bean>
+	
+	 
+	 
+	 
+
+</beans>

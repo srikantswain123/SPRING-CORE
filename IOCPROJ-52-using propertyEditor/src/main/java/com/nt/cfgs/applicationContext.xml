@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
+<bean id="info" class="com.nt.beans.PersonInfo">
+<property name="adharno" value="456758754"/>
+<property name="pname" value="ranjit"/>
+<property name="salary" value="647152.0f"/>
+<property name="address" value="hyderabad"/>
+<property name="dob" value="11/23/1990"/>
+<property name="countryCurency" value="INR"/>
+<property name="potopath" value="E:/files//photo.jpg"/>
+<property name="curentLocale" value="hi-IN"/>
+<property name="javaClass" value="java.lang.System"/>
+<property name="javaClases" value="java.lang.System,java.lang.String"/>
+<!-- <property name="inputfile" value="classpath:/photo.jpeg"/> -->
+<property name="fbUrl" value="http://fb.com"/>
+<property name="props" value="name=raja,age=30,addrs=hyd"/>
+<property name="timezone" value="Asia/Calcutta"/>
+
+</bean>
+
+</beans>

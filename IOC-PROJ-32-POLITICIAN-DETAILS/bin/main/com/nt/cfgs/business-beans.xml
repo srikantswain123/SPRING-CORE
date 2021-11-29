@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
+	<bean id="hkds" class="com.zaxxer.hikari.HikariDataSource">
+		<property name="driverClassName" value="${driver}" />
+		<property name="jdbcUrl" value="${url}" />
+		<property name="username" value="${user}" />
+		<property name="password" value="${pwd}" />
+	</bean>
+
+	<bean id="dao" class="com.nt.dao.PoliticianDaoImpl">
+		<constructor-arg ref="hkds" />
+	</bean>
+
+	<bean id="service" class="com.nt.service.PoliticianServiceImpl">
+		<constructor-arg ref="dao" />
+	</bean>
+
+
+
+
+
+
+	<!-- <bean id="pph" class="org.springframework.context.support.PropertySourcesPlaceholderConfigurer"> 
+		<property name="location" value="com/nt/commons/jdbc.Properties"/> </bean> -->
+	<context:property-placeholder
+		location="com/nt/commons/jdbc.properties" />
+
+
+</beans>
